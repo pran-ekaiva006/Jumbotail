@@ -107,5 +107,4 @@ src/main/java/com/assignment/shipping_estimator/
     └── DistanceUtil.java
 ```
 
-## License
-This project is for assignment/educational purposes.
+
