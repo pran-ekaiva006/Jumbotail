@@ -1,21 +1,18 @@
 package com.assignment.shipping_estimator.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class ShippingResponse {
-
-    private double shippingCharge;
-    private Long warehouseId;
-
-    public ShippingResponse(double shippingCharge, Long warehouseId) {
-        this.shippingCharge = shippingCharge;
-        this.warehouseId = warehouseId;
-    }
-
-    public double getShippingCharge() {
-        return shippingCharge;
-    }
-
-    public Long getWarehouseId() {
-        return warehouseId;
-    }
+    private Double shippingCharge;
+    private NearestWarehouseResponse nearestWarehouse;
+    private String transportMode;
+    private Double distance;
+    private String deliverySpeed;
 }
-

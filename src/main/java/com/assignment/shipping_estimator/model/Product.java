@@ -7,12 +7,12 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "products")
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Customer {
+public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,8 +22,9 @@ public class Customer {
     private String name;
 
     @Column(nullable = false)
-    private Double latitude;
+    private Double weightKg;
 
-    @Column(nullable = false)
-    private Double longitude;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "seller_id")
+    private Seller seller;
 }
